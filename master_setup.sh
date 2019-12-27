@@ -22,6 +22,8 @@ echo "Add the iptables rule to sysctl.conf"
 echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
 echo "Enable ip tables immediately"
 sudo sysctl -p
+
+# MASTER ONLY
 echo "Initalize the cluster"
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 echo "Set up local kubeconfig"
