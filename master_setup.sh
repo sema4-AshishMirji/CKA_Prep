@@ -6,5 +6,5 @@ echo "Set up local kubeconfig"
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
-Echo "Apply flannel CNI network overlay"
+echo "Apply flannel CNI network overlay"
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
