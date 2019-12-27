@@ -25,3 +25,5 @@ echo "Add the iptables rule to sysctl.conf"
 echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
 echo "Enable ip tables immediately"
 sudo sysctl -p
+
+echo "Enter worker join command: "
