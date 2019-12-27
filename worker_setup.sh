@@ -12,6 +12,9 @@ echo "apt-get update"
 sudo apt-get update
 process_id=$!
 wait $process_id
+sudo apt-get upgrade -y
+process_id=$!
+wait $process_id
 echo "install docker, kublet, kubeadm, kubectl"
 sudo apt-get install -y docker-ce=18.06.1~ce~3-0~ubuntu kubelet=1.13.5-00 kubeadm=1.13.5-00 kubectl=1.13.5-00
 process_id=$!

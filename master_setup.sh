@@ -1,7 +1,7 @@
 sh worker_setup.sh
 # MASTER ONLY
 echo "Initalize the cluster"
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16  | grep "kubeadm join" join_key.txt
 echo "Set up local kubeconfig"
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
