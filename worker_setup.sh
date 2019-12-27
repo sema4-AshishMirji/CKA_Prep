@@ -1,3 +1,6 @@
+#!/bin/sh
+sh alias_setup.sh
+
 echo "Download docker gpg key"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 echo "Add the Docker repository"
@@ -9,7 +12,7 @@ cat << EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 echo "apt-get update"
-sudo apt-get update
+sudo apt-get update -y
 process_id=$!
 wait $process_id
 sudo apt-get upgrade -y
@@ -25,5 +28,7 @@ echo "Add the iptables rule to sysctl.conf"
 echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
 echo "Enable ip tables immediately"
 sudo sysctl -p
-
+sh shell_setup.sh
+echo "##############------##############"
+sudo su cloud_user
 echo "Enter worker join command: "

@@ -1,3 +1,4 @@
+#!/bin/sh
 sh worker_setup.sh
 # MASTER ONLY
 echo "Initalize the cluster"
