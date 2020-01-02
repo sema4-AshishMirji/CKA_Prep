@@ -30,5 +30,5 @@ echo "Enable ip tables immediately"
 sudo sysctl -p
 sh shell_setup.sh
 echo "##############------##############"
-sudo su cloud_user
+exit
 echo "Enter worker join command: "
